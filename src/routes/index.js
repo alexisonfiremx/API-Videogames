@@ -15,7 +15,7 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 
 router.get('/', async (req, res)=> {
-    res.status(200).send("This is a test to see is Backend is working correctly")
+    res.status(200).send("This is a test to see is Backend is working correctly, part II")
 
 })
 
