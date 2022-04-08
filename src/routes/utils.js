@@ -1,10 +1,9 @@
 const axios = require('axios');
-const {API_KEY} = process.env;
-const apiKey = "585ed80f88a44717877443065a3c6ab2"
+const {RAWG_API_KEY} = process.env;
 const { Videogame, Genre, Platform} = require('../db');
 
 const getAPIinfo = async () => {
-    var gets = [1, 2, 3, 4].map (async (e) => await axios.get(`https://api.rawg.io/api/games?key=${apiKey}&page_size=25&page=${e}`))
+    var gets = [1, 2, 3, 4].map (async (e) => await axios.get(`https://api.rawg.io/api/games?key=${RAWG_API_KEY}&page_size=25&page=${e}`))
     let allGets = await Promise.all(gets)
     let apiURL = allGets.reduce( (prev,curr) => {
             return prev.concat(curr.data.results);
@@ -53,7 +52,7 @@ const getAllGames = async () => {
 
 
 const getGamesByName = async (name) => {
-    const apiURL = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${apiKey}&page_size=15`)
+    const apiURL = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${RAWG_API_KEY}&page_size=15`)
     const apiDATA = await apiURL.data.results.map(el =>{
         return {
             id: el.id,

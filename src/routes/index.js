@@ -2,8 +2,7 @@ const { Router } = require('express');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 const axios = require('axios');
-const {API_KEY} = process.env;
-const apiKey = "585ed80f88a44717877443065a3c6ab2"
+const {RAWG_API_KEY} = process.env;
 const { Videogame, Genre, Platform} = require('../db');
 const { getDBinfo, getAllGames, getGamesByName } = require('./utils')
 
@@ -39,7 +38,7 @@ router.get('/videogames', async (req, res)=>{
 
 
 router.get('/genres', async (req, res)=> {
-    const apiURL2 = await axios.get(`https://api.rawg.io/api/genres?key=${apiKey}`)
+    const apiURL2 = await axios.get(`https://api.rawg.io/api/genres?key=${RAWG_API_KEY}`)
     const apiGenre= await apiURL2.data.results.map(el => el.name)
 
     apiGenre.forEach(el => {
@@ -57,7 +56,7 @@ router.get('/genres', async (req, res)=> {
 
 
 router.get('/platforms', async (req, res)=> {
-    const apiURL3 = await axios.get(`https://api.rawg.io/api/platforms?key=${apiKey}`)
+    const apiURL3 = await axios.get(`https://api.rawg.io/api/platforms?key=${RAWG_API_KEY}`)
     const apiPlatf = await apiURL3.data.results.map(el => el.name)
     apiPlatf.forEach( el => {
         Platform.findOrCreate({
@@ -96,7 +95,7 @@ router.post('/videogame', async (req, res) => {
 router.get('/videogame/:id', async (req, res)=> {
     const {id} = req.params
     if(!id.includes('-')) {
-        const detail = await axios.get(`https://api.rawg.io/api/games/${id}?key=${apiKey}`)
+        const detail = await axios.get(`https://api.rawg.io/api/games/${id}?key=${RAWG_API_KEY}`)
         const dat = await detail.data
         let formated = [{
             id: dat.id,
