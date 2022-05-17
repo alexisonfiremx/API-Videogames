@@ -1,15 +1,15 @@
+<div align="center">
+  <img alt="Logo" src="https://res.cloudinary.com/djbiam1gm/image/upload/v1652810085/VG%20PI/Infinite_VG.png" />
+</div>
+<h2 align="center">
+  <a href="https://infinitevg.marcosheag.com/" target="_blank">infinitevg.marcosheag.com</a>
+</h2>
 
 # Individual Project - Infinite Video Games App 🎮
 
 
 <div>
-    <img height="270" src="https://res.cloudinary.com/djbiam1gm/image/upload/v1649704622/VG%20PI/slide01_mini.png" />
-    <img height="270" src="https://res.cloudinary.com/djbiam1gm/image/upload/v1649704623/VG%20PI/slide02_mini.png" />
-</div>
-
-<div>
-    <img height="270" src="https://res.cloudinary.com/djbiam1gm/image/upload/v1649704623/VG%20PI/slide03_mini.png" />
-    <img height="270" src="https://res.cloudinary.com/djbiam1gm/image/upload/v1649704622/VG%20PI/slide04_mini.png" />
+    <img src="https://res.cloudinary.com/djbiam1gm/image/upload/v1649871678/VG%20PI/VG_Slides_2.gif" />
 </div>
 
 ## Project Goals
